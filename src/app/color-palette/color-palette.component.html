@@ -6,7 +6,7 @@
 
   <div *ngFor="let color of colors"
        [style.background-color]="color.getRGB()"
-       class="color pulse"
+       class="color"
        (click)="randomizeColor(color)"
   >
 
