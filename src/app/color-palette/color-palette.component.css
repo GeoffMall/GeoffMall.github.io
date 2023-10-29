@@ -1,10 +1,9 @@
-:root {
+.color-container {
     display: flex;
     min-width: 20em;
     width: 30em;
     min-height: 5em;
 }
-
 
 .color {
     display: inline-flex;

@@ -18,6 +18,12 @@ export class ColorPaletteComponent {
     randomizeColor(color: Color): void {
         color.randomize();
     }
+
+    randomizeAllColors(): void {
+        for (let color of this.colors) {
+            color.randomize();
+        }
+    }
 }
 
 export class Color {
@@ -25,12 +31,14 @@ export class Color {
     gValue: number;
     bValue: number;
     aValue?: number;
+    selected?: boolean;
 
-    constructor(rValue: number, gValue: number, bValue: number, aValue?: number) {
+    constructor(rValue: number, gValue: number, bValue: number, aValue?: number, selected?: boolean) {
         this.rValue = rValue;
         this.gValue = gValue;
         this.bValue = bValue;
         this.aValue = aValue;
+        this.selected = selected;
     }
 
     randomize(): void {
