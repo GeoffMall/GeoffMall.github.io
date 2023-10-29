@@ -1,0 +1,53 @@
+:root {
+    display: flex;
+    min-width: 20em;
+    width: 30em;
+    min-height: 5em;
+}
+
+
+.color {
+    display: inline-flex;
+    flex: 1 1 auto;
+    border: 1px solid #000;
+    min-width: 5em;
+    min-height: 5em;
+}
+
+.pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.color-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+.color-text {
+    font-size: 1em;
+    user-select: none;
+}
+
+.white {
+    color: white;
+}
+
+.gray {
+    color: gray;
+}
+
+.black {
+    color: black;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+}

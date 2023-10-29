@@ -1,0 +1,11 @@
+<div *ngFor="let color of colors"
+     [style.background-color]="color.getRGB()"
+     class="color pulse"
+     (click)="randomizeColor(color)"
+>
+  <div class="color-text-container">
+    <p class="color-text black">{{color.getDisplayRGB()}}</p>
+    <p class="color-text gray">{{color.getDisplayRGB()}}</p>
+    <p class="color-text white">{{color.getDisplayRGB()}}</p>
+  </div>
+</div>
