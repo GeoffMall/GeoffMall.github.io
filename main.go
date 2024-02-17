@@ -12,7 +12,15 @@ import (
 
 func main() {
 	r := chi.NewRouter()
-	blueButton := components.BlueButton("Click me")
+
+	codeBlock := `package main
+
+func main() {
+	println("Hello, world!")
+}
+`
+
+	blueButton := components.BlueButton(codeBlock)
 
 	page := components.Page(blueButton)
 	r.Get("/", templ.Handler(page).ServeHTTP)
