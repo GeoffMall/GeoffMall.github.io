@@ -1,7 +1,10 @@
 package main
 
 import (
+	"context"
+	"flag"
 	"net/http"
+	"os"
 
 	"github.com/a-h/templ"
 	"github.com/go-chi/chi/v5"
@@ -10,8 +13,13 @@ import (
 	"github.com/GeoffMall/GeoffMall.github.io/components"
 )
 
+var generateStatic = flag.Bool("static", false, "A boolean flag for generating static HTML files.")
+
 func main() {
-	r := chi.NewRouter()
+	start()
+}
+
+func start() {
 
 	codeBlock := `package main
 
@@ -23,11 +31,31 @@ func main() {
 	blueButton := components.BlueButton(codeBlock)
 
 	page := components.Page(blueButton)
+	r := chi.NewRouter()
 	r.Get("/", templ.Handler(page).ServeHTTP)
-
 	assets.Mount(r)
 
-	if err := http.ListenAndServe(":8080", r); err != nil {
-		panic(err)
+	startListening := func() {
+		if err := http.ListenAndServe(":8080", r); err != nil {
+			panic(err)
+		}
+	}
+
+	renderStatic := func() {
+		f, err := os.Create("index.html")
+		if err != nil {
+			panic(err)
+		}
+		err = page.Render(context.Background(), f)
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	flag.Parse()
+	if *generateStatic {
+		renderStatic()
+	} else {
+		startListening()
 	}
 }
