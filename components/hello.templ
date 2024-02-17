@@ -1,0 +1,17 @@
+package components
+
+templ Hello(name string, classNames string) {
+    <div class={ classNames }>Hello, { name }</div>
+}
+
+templ Button(text string, classNames string) {
+	<button class={ classNames }>{ text }</button>
+}
+
+templ BlueButton(text string) {
+
+    <h1 class="text-4xl font-bold bg-gradient-to-r from-indigo-500">Technical Opinions</h1>
+    <h1 class="text-4xl italic bg-gradient-to-r from-indigo-500">Technical Opinions</h1>
+    <h1 class="text-4xl font-bold bg-gradient-to-r from-indigo-500">Technical Opinions</h1>
+    <button class="border border-black italic bg-blue-500">{ text }</button>
+}

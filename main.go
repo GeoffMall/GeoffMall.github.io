@@ -1,15 +1,25 @@
 package main
 
 import (
-	"context"
-	"os"
+	"net/http"
 
-	"github.com/GeoffMall/GeoffMall.github.io/internal/components"
+	"github.com/a-h/templ"
+	"github.com/go-chi/chi/v5"
+
+	"github.com/GeoffMall/GeoffMall.github.io/assets"
+	"github.com/GeoffMall/GeoffMall.github.io/components"
 )
 
 func main() {
-	component := components.Hello("Geoff")
-	if err := component.Render(context.Background(), os.Stdout); err != nil {
+	r := chi.NewRouter()
+	blueButton := components.BlueButton("Click me")
+
+	page := components.Page(blueButton)
+	r.Get("/", templ.Handler(page).ServeHTTP)
+
+	assets.Mount(r)
+
+	if err := http.ListenAndServe(":8080", r); err != nil {
 		panic(err)
 	}
 }

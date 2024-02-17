@@ -1,0 +1,17 @@
+package components
+
+templ Page(c templ.Component) {
+    <html>
+        <head>
+            <meta charset="UTF-8"/>
+
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <link rel="stylesheet" href="/dist/styles.css"/>
+        </head>
+        <body>
+            <h1>My Page</h1>
+            <p>Welcome to my page</p>
+            @c
+        </body>
+    </html>
+}
