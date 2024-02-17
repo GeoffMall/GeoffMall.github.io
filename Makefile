@@ -23,6 +23,7 @@ build_static: build_templ build_tailwind
 	cp ./assets/static/styles.css ./static/styles.css
 	go run main.go -static
 
+
 go_run_main:
 	go run main.go
 
