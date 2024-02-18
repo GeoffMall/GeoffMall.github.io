@@ -1,13 +1,13 @@
 Hello world, I'm Geoff!
 
 ```
-make watch_tailwind
+make dev
 ```
 
 ```
-make watch_templ
+make build
 ```
 
 ```
-make watch_go
+make install
 ```

@@ -1,5 +1,15 @@
 
 
+dev:
+	# TODO: run all the commands in parallel
+	# make watch_templ
+	# make watch_tailwind
+	# make watch_go
+
+build: build_static
+
+install: install_templ install_tailwind
+
 install_templ:
 	go install github.com/a-h/templ/cmd/templ@latest
 install_tailwind:

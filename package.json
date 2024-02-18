@@ -1,0 +1,16 @@
+{
+  "name": "geoffmall.github.io",
+  "version": "1.0.0",
+  "description": "dependencies for tailwind for github page",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./static/tailwind.css -o ./assets/static/styles.css --minify",
+    "dev": "npx tailwindcss -i ./assets/tailwind.css -o ./assets/static/styles.css --watch",
+    "test": "npx tailwindcss --help"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

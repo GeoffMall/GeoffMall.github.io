@@ -1,0 +1,45 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22' # The Go version to download (if necessary) and use.
+          check-latest: true
+          go-version-file: 'go.mod' # The Go version to use from go.mod file.
+        run: go version
+
+      - name: Install Templ
+        run: go install github.com/a-h/templ/cmd/templ@latest
+
+      - name: Setup Node and Tailwind
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          node-version-file: 'package.json'
+        run: node --version
+
+      - name: Tailwind Generate CSS
+        run: npm run build
+
+      - name: Templ Generate Go
+        run: templ generate
+
+      - name: Go Generate HTML
+        run: go run main.go -static
