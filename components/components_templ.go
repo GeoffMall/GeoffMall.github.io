@@ -62,7 +62,7 @@ func PrimaryNavbar() templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!-- Primary Navbar items --><div class=\"hidden md:flex items-center space-x-1\"><a href=\"\" class=\"py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold \">Opinions</a> <a href=\"\" class=\"py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300\">Music</a></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!-- Primary Navbar items --><div class=\"hidden md:flex items-center space-x-1\"><a href=\"\" class=\"py-4 px-2 text-green-500 border-b-4 border-blue-400 font-semibold \">Opinions</a> <a href=\"\" class=\"py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300\">Music</a></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
