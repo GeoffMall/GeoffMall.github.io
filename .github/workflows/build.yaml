@@ -22,10 +22,12 @@ jobs:
         with:
           go-version: '1.22' # The Go version to download (if necessary) and use.
           check-latest: true
-          go-version-file: 'go.mod' # The Go version to use from go.mod file.
 
       - name: Go Version
         run: go version
+
+      - name: Install Go Dependencies
+        run: go mod tidy
 
       - name: Install Templ
         run: go install github.com/a-h/templ/cmd/templ@latest
@@ -37,10 +39,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          node-version-file: 'package.json'
 
       - name: Node Version
         run: node --version
+
+      - name: Install Node Dependencies
+        run: npm install
 
       - name: Tailwind Generate CSS
         run: npm run build
