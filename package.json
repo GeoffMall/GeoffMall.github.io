@@ -4,7 +4,7 @@
   "description": "dependencies for tailwind for github page",
   "main": "tailwind.config.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./static/tailwind.css -o ./assets/static/styles.css --minify",
+    "build": "npx tailwindcss -i ./assets/tailwind.css -o ./static/styles.css --minify",
     "dev": "npx tailwindcss -i ./assets/tailwind.css -o ./assets/static/styles.css --watch",
     "test": "npx tailwindcss --help"
   },
