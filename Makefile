@@ -15,11 +15,11 @@ install_templ:
 install_tailwind:
 	npm install -D tailwindcss
 
-watch_templ:
+dev_templ:
 	templ generate --watch
-watch_tailwind:
+dev_tailwind:
 	npx tailwindcss -i ./assets/tailwind.css -o ./assets/static/styles.css --watch
-watch_go:
+dev_go:
 	air -c .air.toml
 
 build_templ:

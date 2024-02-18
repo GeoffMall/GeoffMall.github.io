@@ -12,20 +12,25 @@ templ Page(c templ.Component) {
             <link rel="stylesheet" href="/static/styles.css"/>
         </head>
         <body>
-            <h1>My Page</h1>
-            <p>Welcome to my page</p>
-            <p>Welcome to my page</p>
+            @PrimaryNavbar()
             @c
         </body>
     </html>
 }
 
+templ PrimaryNavbar() {
+    <!-- Primary Navbar items -->
+    <div class="hidden md:flex items-center space-x-1">
+        <a href="" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold ">Opinions</a>
+        <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Music</a>
+    </div>
+}
 
 templ CodeBlock(text string) {
     <div class="border-t border-gray-200">
         <div class="flex">
             <pre class="p-4 overflow-x-auto">
-                <code class="bg-gray-50 text-sm font-mono rounded-lg block text-red-700">
+                <code class="bg-gray-50 text-sm font-mono rounded-lg block text-blue-700">
                     for index, line := range strings.Split(text, "\n") {
                         <span class="block leading-relaxed">
                             <span class="inline-block w-8 text-right text-gray-500 pr-4 select-none">{strconv.Itoa(index + 1)}</span>
