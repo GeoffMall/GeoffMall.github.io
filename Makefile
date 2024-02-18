@@ -25,12 +25,12 @@ watch_go:
 build_templ:
 	templ generate
 build_tailwind:
-	npx tailwindcss -i ./assets/tailwind.css -o ./assets/static/styles.css
+	npx tailwindcss -i ./assets/tailwind.css -o ./docs/static/styles.css
+build_github_page:
+	go run main.go -static
 build_go:
-	cp ./assets/static/styles.css ./static/styles.css
 	go build -o server main.go
 build_static: build_templ build_tailwind
-	cp ./assets/static/styles.css ./static/styles.css
 	go run main.go -static
 
 

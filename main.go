@@ -43,7 +43,7 @@ func main() {
 	}
 
 	renderStatic := func() {
-		f, err := os.Create("index.html")
+		f, err := os.Create("./docs/index.html")
 		if err != nil {
 			panic(err)
 		}
