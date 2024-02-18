@@ -36,6 +36,7 @@ func main() {
 	assets.Mount(r)
 
 	startListening := func() {
+
 		if err := http.ListenAndServe(":8080", r); err != nil {
 			panic(err)
 		}
