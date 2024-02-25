@@ -41,7 +41,7 @@ func GenerateStatic() {
 	err := app.GenerateStaticWebsite(".", &app.Handler{
 		Name:        "Hello",
 		Description: "An Hello World example",
-		Resources:   app.GitHubPages("GeoffMall.github.io"),
+		Resources:   app.GitHubPages("GeoffMall.github.io/docs"),
 		Styles: []string{
 			githubPagesStyleCss,
 		},

@@ -19,8 +19,8 @@
       "sizes": "192x192"
     }
   ],
-  "scope": "/GeoffMall.github.io/",
-  "start_url": "/GeoffMall.github.io/",
+  "scope": "/GeoffMall.github.io/docs/",
+  "start_url": "/GeoffMall.github.io/docs/",
   "background_color": "#2d2c2c",
   "theme_color": "#2d2c2c",
   "display": "standalone"

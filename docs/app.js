@@ -5,7 +5,7 @@ var goappNav = function () {};
 var goappOnUpdate = function () {};
 var goappOnAppInstallChange = function () {};
 
-const goappEnv = {"GOAPP_INTERNAL_URLS":"null","GOAPP_ROOT_PREFIX":"/GeoffMall.github.io","GOAPP_STATIC_RESOURCES_URL":"/GeoffMall.github.io","GOAPP_VERSION":"35ed349b365ddc1c9ebbf789f3bbe3f3f8b7291e"};
+const goappEnv = {"GOAPP_INTERNAL_URLS":"null","GOAPP_ROOT_PREFIX":"/GeoffMall.github.io/docs","GOAPP_STATIC_RESOURCES_URL":"/GeoffMall.github.io/docs","GOAPP_VERSION":"e2a60227e36de912fea0d17d14fbc156a1311f55"};
 const goappLoadingLabel = "{progress}%";
 const goappWasmContentLengthHeader = "";
 
@@ -24,7 +24,7 @@ async function goappInitServiceWorker() {
   if ("serviceWorker" in navigator) {
     try {
       const registration = await navigator.serviceWorker.register(
-        "/GeoffMall.github.io/app-worker.js"
+        "/GeoffMall.github.io/docs/app-worker.js"
       );
 
       goappServiceWorkerRegistration = registration;
@@ -213,7 +213,7 @@ async function goappInitWebAssembly() {
 
     const go = new Go();
     const wasm = await instantiateStreaming(
-      fetchWithProgress("/GeoffMall.github.io/web/app.wasm", showProgress),
+      fetchWithProgress("/GeoffMall.github.io/docs/web/app.wasm", showProgress),
       go.importObject
     );
 
