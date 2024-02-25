@@ -5,7 +5,7 @@ var goappNav = function () {};
 var goappOnUpdate = function () {};
 var goappOnAppInstallChange = function () {};
 
-const goappEnv = {"GOAPP_INTERNAL_URLS":"null","GOAPP_ROOT_PREFIX":"/GeoffMall.github.io","GOAPP_STATIC_RESOURCES_URL":"/GeoffMall.github.io","GOAPP_VERSION":"a2e8bb63d9a402b633b3be0ff9aa0159a4a8d7ad"};
+const goappEnv = {"GOAPP_INTERNAL_URLS":"null","GOAPP_ROOT_PREFIX":"/GeoffMall.github.io","GOAPP_STATIC_RESOURCES_URL":"/GeoffMall.github.io","GOAPP_VERSION":"29278207e11047785ecbb7fd9a769a63455ae5c2"};
 const goappLoadingLabel = "{progress}%";
 const goappWasmContentLengthHeader = "";
 
