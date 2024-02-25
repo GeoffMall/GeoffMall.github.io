@@ -17,8 +17,9 @@ build_static_website:
 	mv ./manifest.webmanifest ./docs/manifest.webmanifest
 	mv ./wasm_exec.js ./docs/wasm_exec.js
 	mv ./app.css ./docs/app.css
-	#mv ./test-app/web/app.wasm ./docs/app.wasm
+	mv ./test-app/web/app.wasm ./docs/web/app.wasm
 	cp ./web/styles.css ./docs/styles.css
+	rm ./server
 
 
 

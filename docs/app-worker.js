@@ -1,8 +1,8 @@
-const cacheName = "app-" + "ec95978a10bd825a7633c9897373b59b0599533a";
+const cacheName = "app-" + "35ed349b365ddc1c9ebbf789f3bbe3f3f8b7291e";
 const resourcesToCache = ["/GeoffMall.github.io","/GeoffMall.github.io/app.css","/GeoffMall.github.io/app.js","/GeoffMall.github.io/manifest.webmanifest","/GeoffMall.github.io/wasm_exec.js","/GeoffMall.github.io/web/app.wasm","/styles.css","https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.png"];
 
 self.addEventListener("install", (event) => {
-  console.log("installing app worker ec95978a10bd825a7633c9897373b59b0599533a");
+  console.log("installing app worker 35ed349b365ddc1c9ebbf789f3bbe3f3f8b7291e");
 
   event.waitUntil(
     caches
@@ -28,7 +28,7 @@ self.addEventListener("activate", (event) => {
       );
     })
   );
-  console.log("app worker ec95978a10bd825a7633c9897373b59b0599533a is activated");
+  console.log("app worker 35ed349b365ddc1c9ebbf789f3bbe3f3f8b7291e is activated");
 });
 
 self.addEventListener("fetch", (event) => {
