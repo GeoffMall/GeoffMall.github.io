@@ -8,7 +8,7 @@ import { ErrorStateMatcher } from "@angular/material/core";
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'GeoffMall';
+    title = 'Work in Progress';
 
     displayedColumns: string[] = ['error-matching', 'error-message', 'guidance'];
     dataSource = ELEMENT_DATA;
