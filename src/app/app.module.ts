@@ -15,10 +15,12 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatCardModule } from "@angular/material/card";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatTableModule } from "@angular/material/table";
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        NavbarComponent
     ],
     imports: [
         BrowserModule,

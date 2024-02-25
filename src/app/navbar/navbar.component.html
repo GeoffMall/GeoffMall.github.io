@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item disabled>
+      <mat-icon>flash_on</mat-icon>
+      <span>Go (Coming soon)</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>science</mat-icon>
+      <span>Python (Coming soon)</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>memory</mat-icon>
+      <span>Java (Coming soon)</span>
+    </button>
+  </mat-menu>
+
+  <span>{{title}}</span>
+  <span class="navbar-spacer"></span>
+
+  <button mat-icon-button>
+    <mat-icon>favorite</mat-icon>
+  </button>
+
+  <button mat-icon-button>
+    <mat-icon>share</mat-icon>
+  </button>
+
+</mat-toolbar>
