@@ -7,7 +7,8 @@ import (
 )
 
 const (
-	styleCss = "/web/styles.css"
+	styleCss            = "/web/styles.css"
+	githubPagesStyleCss = "/styles.css"
 )
 
 func Run() {
@@ -42,7 +43,7 @@ func GenerateStatic() {
 		Description: "An Hello World example",
 		Resources:   app.GitHubPages("GeoffMall.github.io"),
 		Styles: []string{
-			styleCss,
+			githubPagesStyleCss,
 		},
 	})
 	if err != nil {
