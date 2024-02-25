@@ -1,28 +1,24 @@
-build: build_templ build_tailwind build_github_page
-
-install: install_templ install_tailwind
-
 dev:
-	# TODO
+	air
 
-install_templ:
-	go install github.com/a-h/templ/cmd/templ@latest
-install_tailwind:
-	npm install -D tailwindcss
+dev_v0:
+	npx tailwindcss -i ./web/tailwind.css -o ./web/styles.css
+	GOARCH=wasm GOOS=js go build -o web/app.wasm
+	go build -o ./tmp/main .
 
-dev_tailwind:
-	npx tailwindcss -i ./assets/tailwind.css -o ./assets/static/styles.css --watch
-dev_go:
-	./scripts/dev.sh
+build_static_website:
+	npx tailwindcss -i ./web/tailwind.css -o ./web/styles.css
+	GOARCH=wasm GOOS=js go build -o ./test-app/web/app.wasm
+	go build -o server
+	GENERATE_STATIC=true ./server
+	mv ./app-worker.js ./docs/app-worker.js
+	mv ./app.js ./docs/app.js
+	mv ./index.html ./docs/index.html
+	mv ./manifest.webmanifest ./docs/manifest.webmanifest
+	mv ./wasm_exec.js ./docs/wasm_exec.js
+	mv ./app.css ./docs/app.css
+	cp ./web/app.wasm ./docs/web/app.wasm
+	cp ./web/styles.css ./docs/web/styles.css
 
-build_templ:
-	templ generate
-build_tailwind:
-	npx tailwindcss -i ./assets/tailwind.css -o ./docs/static/styles.css
-build_github_page:
-	go run main.go -static
 
-
-tailwindcss_init:
-	npx tailwindcss init
 
