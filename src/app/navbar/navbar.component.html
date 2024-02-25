@@ -1,32 +1,39 @@
-<mat-toolbar color="primary">
+<mat-toolbar>
 
-  <button mat-icon-button [matMenuTriggerFor]="menu">
+  <a mat-button routerLink="">
+    <mat-icon>home</mat-icon>
+    <span>{{title}}</span>
+  </a>
+  <span class="navbar-spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="menuOptions">
     <mat-icon>menu</mat-icon>
   </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item disabled>
-      <mat-icon>flash_on</mat-icon>
-      <span>Go (Coming soon)</span>
+  <mat-menu #menuOptions="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="code">
+      <mat-icon>code</mat-icon>
+      <span>Code</span>
     </button>
-    <button mat-menu-item disabled>
-      <mat-icon>science</mat-icon>
-      <span>Python (Coming soon)</span>
-    </button>
-    <button mat-menu-item disabled>
-      <mat-icon>memory</mat-icon>
-      <span>Java (Coming soon)</span>
+    <button mat-menu-item>
+      <mat-icon>music_note</mat-icon>
+      <span>Music (Coming soon)</span>
     </button>
   </mat-menu>
 
-  <span>{{title}}</span>
-  <span class="navbar-spacer"></span>
-
-  <button mat-icon-button>
-    <mat-icon>favorite</mat-icon>
-  </button>
-
-  <button mat-icon-button>
-    <mat-icon>share</mat-icon>
-  </button>
+  <mat-menu #code="matMenu">
+    <a mat-menu-item routerLink="go">
+      <mat-icon>flash_on</mat-icon>
+      <span>Go</span>
+    </a>
+    <a mat-menu-item routerLink="python">
+      <mat-icon>science</mat-icon>
+      <span>Python</span>
+    </a>
+    <a mat-menu-item routerLink="java">
+      <mat-icon>memory</mat-icon>
+      <span>Java</span>
+    </a>
+  </mat-menu>
 
 </mat-toolbar>
+

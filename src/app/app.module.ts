@@ -16,11 +16,20 @@ import { MatCardModule } from "@angular/material/card";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatTableModule } from "@angular/material/table";
 import { NavbarComponent } from './navbar/navbar.component';
+import { PageGoComponent } from './page-go/page-go.component';
+import { PageJavaComponent } from './page-java/page-java.component';
+import { PagePythonComponent } from './page-python/page-python.component';
+import { PageHomeComponent } from './page-home/page-home.component';
+import { MatDividerModule } from "@angular/material/divider";
 
 @NgModule({
     declarations: [
         AppComponent,
-        NavbarComponent
+        NavbarComponent,
+        PageGoComponent,
+        PageJavaComponent,
+        PagePythonComponent,
+        PageHomeComponent
     ],
     imports: [
         BrowserModule,
@@ -34,6 +43,7 @@ import { NavbarComponent } from './navbar/navbar.component';
         MatButtonModule,
         MatButtonToggleModule,
         MatCardModule,
+        MatDividerModule,
         MatIconModule,
         MatInputModule,
         MatFormFieldModule,
