@@ -40,7 +40,3 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-
-components/*_templ.txt
-components/**/*_templ.txt
-
