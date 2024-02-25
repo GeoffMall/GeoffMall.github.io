@@ -1,34 +1,24 @@
-build: build_templ build_tailwind build_github_page
-
-install: install_templ install_tailwind
-
 dev:
-	# TODO
+	air
 
-install_templ:
-	go install github.com/a-h/templ/cmd/templ@latest
-install_tailwind:
-	npm install -D tailwindcss
-
-dev_tailwind:
-	npx tailwindcss -i ./web/tailwind.css -o ./web/styles.css --watch
-dev_go:
-	./scripts/dev.sh
-
-build_templ:
-	templ generate
-build_tailwind:
+dev_v0:
 	npx tailwindcss -i ./web/tailwind.css -o ./web/styles.css
-build_github_page:
-	go run main.go -static
-
-
-tailwindcss_init:
-	npx tailwindcss init
-
-build_with_goapp:
 	GOARCH=wasm GOOS=js go build -o web/app.wasm
-	go build -o server
+	go build -o ./tmp/main .
 
-run_with_goapp: build_with_goapp
-	./server
+build_static_website:
+	npx tailwindcss -i ./web/tailwind.css -o ./web/styles.css
+	GOARCH=wasm GOOS=js go build -o ./test-app/web/app.wasm
+	go build -o server
+	GENERATE_STATIC=true ./server
+	mv ./app-worker.js ./docs/app-worker.js
+	mv ./app.js ./docs/app.js
+	mv ./index.html ./docs/index.html
+	mv ./manifest.webmanifest ./docs/manifest.webmanifest
+	mv ./wasm_exec.js ./docs/wasm_exec.js
+	mv ./app.css ./docs/app.css
+	cp ./web/app.wasm ./docs/web/app.wasm
+	cp ./web/styles.css ./docs/web/styles.css
+
+
+

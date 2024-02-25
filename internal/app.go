@@ -11,7 +11,9 @@ const (
 )
 
 func Run() {
-	app.Route("/", &hello{})
+	mainPage := &MainPage{}
+
+	app.Route("/", mainPage)
 
 	app.RunWhenOnBrowser()
 
@@ -28,10 +30,34 @@ func Run() {
 	}
 }
 
-type hello struct {
+func GenerateStatic() {
+	mainPage := &MainPage{}
+
+	app.Route("/", mainPage)
+
+	app.RunWhenOnBrowser()
+
+	err := app.GenerateStaticWebsite(".", &app.Handler{
+		Name:        "Hello",
+		Description: "An Hello World example",
+		Resources:   app.GitHubPages("GeoffMall.github.io"),
+		Styles: []string{
+			styleCss,
+		},
+	})
+	if err != nil {
+		panic(err)
+	}
+}
+
+type MainPage struct {
 	app.Compo
 }
 
-func (h *hello) Render() app.UI {
-	return app.H1().Text("Hello, World!").Class("inline-block w-8 text-right text-gray-500 pr-4 select-none")
+func (m *MainPage) Render() app.UI {
+	return app.Div().Body(
+		&TitleBar{},
+		&CenterContent{},
+		&Footer{},
+	)
 }
