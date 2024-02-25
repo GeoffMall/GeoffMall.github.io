@@ -1,0 +1,42 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.table {
+  width: 75%;
+}
+
+
+.mat-column-error-matching {
+  //width: 32px;
+  border: 1px solid currentColor;
+  //padding-right: 24px;
+  //text-align: center;
+}
+
+.mat-column-error-message {
+  border: 1px solid currentColor;
+  //padding-left: 16px;
+  //font-size: 20px;
+}
+
+.mat-column-guidance {
+  border: 1px solid currentColor;
+  font-style: italic;
+  width: 32px;
+  padding-right: 24px;
+  padding-left: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
