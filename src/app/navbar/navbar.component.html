@@ -1,39 +1,10 @@
-<mat-toolbar>
-
-  <a mat-button routerLink="">
-    <mat-icon>home</mat-icon>
-    <span>{{title}}</span>
-  </a>
-  <span class="navbar-spacer"></span>
-
-  <button mat-button [matMenuTriggerFor]="menuOptions">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <mat-menu #menuOptions="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="code">
-      <mat-icon>code</mat-icon>
-      <span>Code</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>music_note</mat-icon>
-      <span>Music (Coming soon)</span>
-    </button>
-  </mat-menu>
-
-  <mat-menu #code="matMenu">
-    <a mat-menu-item routerLink="go">
-      <mat-icon>flash_on</mat-icon>
-      <span>Go</span>
-    </a>
-    <a mat-menu-item routerLink="python">
-      <mat-icon>science</mat-icon>
-      <span>Python</span>
-    </a>
-    <a mat-menu-item routerLink="java">
-      <mat-icon>memory</mat-icon>
-      <span>Java</span>
-    </a>
-  </mat-menu>
-
-</mat-toolbar>
-
+<nav class="flex-none">
+  <div class="bg-gray-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Content goes here -->
+        <!-- ... -->
+      </div>
+    </div>
+  </div>
+</nav>
