@@ -5,6 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
-  title = 'Work in Progress';
+  menuOpen = false;
 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+    console.log(this.menuOpen);
+  }
 }

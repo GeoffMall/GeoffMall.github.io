@@ -13,6 +13,7 @@ import { PageJavaComponent } from './page-java/page-java.component';
 import { PagePythonComponent } from './page-python/page-python.component';
 import { PageHomeComponent } from './page-home/page-home.component';
 import { PageCodeComponent } from './page-code/page-code.component';
+import { MainContentComponent } from './main-content/main-content.component';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { PageCodeComponent } from './page-code/page-code.component';
         PagePythonComponent,
         PageHomeComponent,
         PageCodeComponent,
+        MainContentComponent,
     ],
     imports: [
         BrowserModule,
