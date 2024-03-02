@@ -7,20 +7,19 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
 import { PageGoComponent } from './page-go/page-go.component';
 import { PageJavaComponent } from './page-java/page-java.component';
 import { PagePythonComponent } from './page-python/page-python.component';
 import { PageHomeComponent } from './page-home/page-home.component';
 import { PageCodeComponent } from './page-code/page-code.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import { SvgComponent } from './svg/svg.component';
 
 @NgModule({
     declarations: [
         AppComponent,
 
         NavbarComponent,
-        FooterComponent,
 
         PageGoComponent,
         PageJavaComponent,
@@ -28,6 +27,7 @@ import { MainContentComponent } from './main-content/main-content.component';
         PageHomeComponent,
         PageCodeComponent,
         MainContentComponent,
+        SvgComponent,
     ],
     imports: [
         BrowserModule,
