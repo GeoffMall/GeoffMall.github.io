@@ -1,31 +1,38 @@
-<nav class="flex-none">
-  <div class="bg-gray-800 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="flex items-center justify-between h-16">
 
-        <!-- House Icon aligned to the left -->
-        <a href="#" class="">
-          <span class="sr-only">Navigate home</span>
-          <app-svg [name]="'home'"></app-svg>
+    <!-- House Icon aligned to the left -->
+    <a routerLink="">
+      <app-svg [svg]="SVG.home"></app-svg>
+    </a>
+
+    <!-- Title -->
+    <div class="flex-grow h-full text-center items-center" (click)="toggleTheme()">
+      <h2 class="select-none">
+        Theme: {{theme?.name}} (click me to change)
+      </h2>
+    </div>
+
+    <!-- Menu Button and Dropdown Container -->
+    <div class="ml-auto relative">
+      <button class="hover:text-gray-300 focus:outline-none focus:text-gray-300" (click)="toggleMenu()">
+        <app-svg [svg]="SVG.menu" *ngIf="!menuOpen"></app-svg>
+        <app-svg [svg]="SVG.close" *ngIf="menuOpen"></app-svg>
+      </button>
+
+      <!-- Dropdown Menu -->
+      <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50" *ngIf="menuOpen">
+        <a routerLink="code" class="block px-4 py-2 hover:bg-gray-100" (click)="toggleMenu()">
+          Code
         </a>
-
-        <!-- Menu Button and Dropdown Container -->
-        <div class="ml-auto relative">
-          <button class="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300" (click)="toggleMenu()">
-            <span class="sr-only">Toggle main menu</span>
-            <app-svg [name]="'menu'" *ngIf="!menuOpen"></app-svg>
-            <app-svg [name]="'close'" *ngIf="menuOpen"></app-svg>
-          </button>
-
-          <!-- Dropdown Menu -->
-          <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50" *ngIf="menuOpen">
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Option 1</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Option 2</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Option 3</a>
-          </div>
-        </div>
-
+        <a routerLink="music" class="block px-4 py-2 hover:bg-gray-100" (click)="toggleMenu()">
+          Music
+        </a>
+        <a routerLink="math" class="block px-4 py-2 hover:bg-gray-100" (click)="toggleMenu()">
+          Math
+        </a>
       </div>
     </div>
+
   </div>
-</nav>
+</div>

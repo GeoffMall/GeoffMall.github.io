@@ -7,13 +7,12 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { PageGoComponent } from './page-go/page-go.component';
-import { PageJavaComponent } from './page-java/page-java.component';
-import { PagePythonComponent } from './page-python/page-python.component';
 import { PageHomeComponent } from './page-home/page-home.component';
 import { PageCodeComponent } from './page-code/page-code.component';
-import { MainContentComponent } from './main-content/main-content.component';
 import { SvgComponent } from './svg/svg.component';
+import { PageMusicComponent } from './page-music/page-music.component';
+import { PageMathComponent } from './page-math/page-math.component';
+import { PageSettingsComponent } from './page-settings/page-settings.component';
 
 @NgModule({
     declarations: [
@@ -21,13 +20,12 @@ import { SvgComponent } from './svg/svg.component';
 
         NavbarComponent,
 
-        PageGoComponent,
-        PageJavaComponent,
-        PagePythonComponent,
         PageHomeComponent,
         PageCodeComponent,
-        MainContentComponent,
         SvgComponent,
+        PageMusicComponent,
+        PageMathComponent,
+        PageSettingsComponent,
     ],
     imports: [
         BrowserModule,

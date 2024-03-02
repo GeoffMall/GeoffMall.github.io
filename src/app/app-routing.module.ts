@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageGoComponent } from "./page-go/page-go.component";
-import { PagePythonComponent } from "./page-python/page-python.component";
-import { PageJavaComponent } from "./page-java/page-java.component";
 import { PageHomeComponent } from "./page-home/page-home.component";
 import { PageCodeComponent } from "./page-code/page-code.component";
+import { PageMathComponent } from "./page-math/page-math.component";
+import { PageMusicComponent } from "./page-music/page-music.component";
+import { PageSettingsComponent } from "./page-settings/page-settings.component";
 
 const routes: Routes = [
     {path: '', component: PageHomeComponent},
     {path: 'code', component: PageCodeComponent},
-    {path: 'code/go', component: PageGoComponent},
-    {path: 'code/python', component: PagePythonComponent},
-    {path: 'code/java', component: PageJavaComponent},
+    {path: 'math', component: PageMathComponent},
+    {path: 'music', component: PageMusicComponent},
+    {path: 'settings', component: PageSettingsComponent}
 ];
 
 @NgModule({
