@@ -1,5 +1,5 @@
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="flex items-center justify-between h-16">
+<div class="container">
+  <div class="flex-container">
 
     <!-- House Icon aligned to the left -->
     <a routerLink="">
@@ -7,28 +7,28 @@
     </a>
 
     <!-- Title -->
-    <div class="flex-grow h-full text-center items-center" (click)="toggleTheme()">
+    <div class="title-container" (click)="toggleTheme()">
       <h2 class="select-none">
         Theme: {{theme?.name}} (click me to change)
       </h2>
     </div>
 
     <!-- Menu Button and Dropdown Container -->
-    <div class="ml-auto relative">
-      <button class="hover:text-gray-300 focus:outline-none focus:text-gray-300" (click)="toggleMenu()">
+    <div class="menu-button-container">
+      <button class="menu-button" (click)="toggleMenu()">
         <app-svg [svg]="SVG.menu" *ngIf="!menuOpen"></app-svg>
         <app-svg [svg]="SVG.close" *ngIf="menuOpen"></app-svg>
       </button>
 
       <!-- Dropdown Menu -->
-      <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50" *ngIf="menuOpen">
-        <a routerLink="code" class="block px-4 py-2 hover:bg-gray-100" (click)="toggleMenu()">
+      <div class="dropdown-menu" *ngIf="menuOpen">
+        <a routerLink="code" (click)="toggleMenu()">
           Code
         </a>
-        <a routerLink="music" class="block px-4 py-2 hover:bg-gray-100" (click)="toggleMenu()">
+        <a routerLink="music" (click)="toggleMenu()">
           Music
         </a>
-        <a routerLink="math" class="block px-4 py-2 hover:bg-gray-100" (click)="toggleMenu()">
+        <a routerLink="math" (click)="toggleMenu()">
           Math
         </a>
       </div>

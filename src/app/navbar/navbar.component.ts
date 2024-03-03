@@ -6,6 +6,7 @@ import { Theme } from "../theme/theme";
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
     menuOpen = false;
