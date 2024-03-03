@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SVG } from "../svg/svg.component";
 import { ThemeService } from "../theme/theme.service";
 import { Theme } from "../theme/theme";
 
@@ -10,7 +9,6 @@ import { Theme } from "../theme/theme";
 })
 export class NavbarComponent implements OnInit {
     menuOpen = false;
-    SVG = SVG;
     theme?: Theme;
 
     constructor(private themeService: ThemeService) {

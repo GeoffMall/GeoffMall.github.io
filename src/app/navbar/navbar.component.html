@@ -2,9 +2,9 @@
   <div class="flex-container">
 
     <!-- House Icon aligned to the left -->
-    <a routerLink="">
-      <app-svg [svg]="SVG.home"></app-svg>
-    </a>
+    <div routerLink="">
+      Home
+    </div>
 
     <!-- Title -->
     <div class="title-container" (click)="toggleTheme()">
@@ -15,10 +15,10 @@
 
     <!-- Menu Button and Dropdown Container -->
     <div class="menu-button-container">
-      <button class="menu-button" (click)="toggleMenu()">
-        <app-svg [svg]="SVG.menu" *ngIf="!menuOpen"></app-svg>
-        <app-svg [svg]="SVG.close" *ngIf="menuOpen"></app-svg>
-      </button>
+      <div class="menu-button" (click)="toggleMenu()">
+        <div *ngIf="!menuOpen">Open Menu</div>
+        <div *ngIf="menuOpen">Close Menu</div>
+      </div>
 
       <!-- Dropdown Menu -->
       <div class="dropdown-menu" *ngIf="menuOpen">

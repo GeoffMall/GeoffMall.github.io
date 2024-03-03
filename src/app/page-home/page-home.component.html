@@ -1,4 +1,20 @@
-<h1 class="animate-spin">Spin Home</h1>
-<h1 class="animate-bounce">Bounce Home</h1>
-<h1 class="animate-ping">Ping Home</h1>
-<h1 class="animate-pulse">Pulse Home</h1>
+<div class="page-home-container">
+
+  <div class="monster-containers">
+    <div class="monster" *ngFor="let m of monsters">
+      Monster
+    </div>
+  </div>
+
+  <h1 class="welcome-text">{{welcomeText}}</h1>
+
+  <h2 class="info-text">{{infoText}}</h2>
+
+<!--  <h3 class="welcome-text">{{buttonText}}</h3>-->
+
+  <div class="monster-containers" *ngFor="let m of monsters">
+    Monster
+  </div>
+
+</div>
+
