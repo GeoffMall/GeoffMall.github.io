@@ -1,11 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 
+export interface Link {
+    path: string;
+    label: string;
+}
+
 @Component({
     selector: 'app-page-home',
     templateUrl: './page-home.component.html',
     styleUrls: ['./page-home.component.scss']
 })
 export class PageHomeComponent implements OnInit {
+    links: Link[] = [
+        { path: '/code', label: 'Code' },
+        { path: '/music', label: 'Music' },
+        { path: '/math', label: 'Math' },
+    ];
+    shownLinks: Link[] = [];
+    linksInterval = 1000;
+    linksEndPause = 1000;
+    linksEnded = false;
+
     welcomeText = '';
     welcomeMessage = 'Welcome to my home.';
     welcomeInterval = 100;
@@ -50,6 +65,7 @@ export class PageHomeComponent implements OnInit {
             if (this.infoText === this.infoMessage) {
                 setTimeout(() => {
                     this.infoEnded = true;
+                    this.startShowingLinks();
                     this.startButtonMessage();
                 }, this.infoEndPause);
                 clearInterval(introInterval);
@@ -70,6 +86,18 @@ export class PageHomeComponent implements OnInit {
         }, this.buttonInterval);
     }
 
+    startShowingLinks() {
+        const linksInterval = setInterval(() => {
+            this.shownLinks.push(this.links[this.shownLinks.length]);
+            if (this.shownLinks.length === this.links.length) {
+                setTimeout(() => {
+                    this.linksEnded = true;
+                }, this.linksEndPause);
+                clearInterval(linksInterval);
+            }
+        }, this.linksInterval);
+
+    }
     startMonsters() {
         const monsterInterval = setInterval(() => {
             this.monsters.push(true);

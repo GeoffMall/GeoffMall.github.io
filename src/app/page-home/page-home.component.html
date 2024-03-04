@@ -1,8 +1,8 @@
 <div class="page-home-container">
 
   <div class="monster-containers">
-    <div class="monster" *ngFor="let m of monsters">
-      Monster
+    <div class="monster" *ngFor="let l of shownLinks">
+      <a routerLink="{{l.path}}">{{l.label}}</a>
     </div>
   </div>
 
